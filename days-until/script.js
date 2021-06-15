@@ -1,27 +1,33 @@
-function getDays(x) {
-  return parseInt((x-apples)/toDays);
+//GLOBAL VARIABLES
+const milToDays = (24*3600*1000);
+const today = new Date();
+
+//CREATING HOLIDAY CLASS
+class Holiday {
+  constructor({day,name}) {
+    this.day = day;
+    this.name = name;
+  }
+
+  //CALCULATE NUMBER OF DAYS
+  getDays() {
+    return parseInt((this.day-today)/milToDays);
+  }
+
+  //ADD "DAYS UNTIL" HOLIDAY TO LIST
+  addToList() {
+    $("#days-until").append(`<li>${this.getDays()} days until ${this.name}!</li>`);
+  }
 }
 
-var toDays = (24*3600*1000);
-var apples = new Date();
-var oranges = new Date(2021,12,25);
-var bananas = new Date(2022,01,01);
-var peaches = new Date(2022,02,14)
-var pears = getDays(oranges);
-var kiwis = getDays(bananas);
-var limes = getDays(peaches);
-var ripePears = pears.toString();
-var ripeKiwis = kiwis.toString();
-var ripeLimes = limes.toString();
+//CREATING HOLIDAY OBJECTS
+let christ21 = new Holiday({day: new Date(2021,12,25), name: "Christmas"});
+let ny22 = new Holiday({day: new Date(2022,01,01), name: "Valentines Day"});
+let val22 = new Holiday({day: new Date(2022,02,14), name: "New Year"});
 
+//UPDATING THE LIST
 $("#trigger").click(function(){ 
-  $("#days-until").append("<li>" + ripePears+" days until Christmas</li>");
-})
-
-$("#trigger").click(function(){
-  $("#days-until").append("<li>" + ripeKiwis+" days until New Year</li>");
-})
-
-$("#trigger").click(function(){
-  $("#days-until").append("<li>" + ripeLimes+" days until Valentines Day</li>");
+  christ21.addToList();
+  ny22.addToList();
+  val22.addToList();
 })
