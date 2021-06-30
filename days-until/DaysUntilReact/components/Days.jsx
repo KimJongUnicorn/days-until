@@ -26,8 +26,8 @@ class Holiday {
 
 //CREATING HOLIDAY OBJECTS
 let christ21 = new Holiday({day: new Date(2021,12,25), name: "Christmas"});
-let ny22 = new Holiday({day: new Date(2022,1,1), name: "Valentines Day"});
-let val22 = new Holiday({day: new Date(2022,2,14), name: "New Year"});
+let ny22 = new Holiday({day: new Date(2022,1,1), name: "New Year"});
+let val22 = new Holiday({day: new Date(2022,2,14), name: "Valentine's Day"});
 
 const christmas = christ21.addToList();
 const newYear = ny22.addToList();
