@@ -17,15 +17,29 @@
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
+.Page {
+  padding-left: 30px;
+  padding-right: 30px;
+  align-self: center;
+}
+
 .App-link {
   color: #61dafb;
+}
+
+.sidebar {
+  max-width: 240px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  align-items: left;
+  background-color: lightgray;
+  color: black;
+  align-self: left;
 }
 
 @keyframes App-logo-spin {
